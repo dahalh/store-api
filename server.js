@@ -2,6 +2,7 @@ import express from "express";
 import cors from "cors";
 import morgan from "morgan";
 import helmet from "helmet";
+import "dotenv/config";
 const app = express();
 
 const PORT = process.env.port || 8000;
@@ -13,8 +14,8 @@ app.use(helmet());
 app.use(morgan("dev"));
 
 // mongodb connect
-// import { dbConnect } from "./src/config/dbConfig.js";
-// dbConnect();
+import { dbConnect } from "./src/config/dbConfig.js";
+dbConnect();
 
 app.get("/", (req, res) => {
   res.json({
