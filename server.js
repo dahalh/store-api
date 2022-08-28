@@ -17,6 +17,13 @@ app.use(morgan("dev"));
 import { dbConnect } from "./src/config/dbConfig.js";
 dbConnect();
 
+// routers
+import productRouter from "./src/routers/productRouter.js";
+import categoryRouter from "./src/routers/categoryRouter.js";
+
+app.use("/api/v1/products", productRouter);
+app.use("/api/v1/category", categoryRouter);
+
 app.get("/", (req, res) => {
   res.json({
     message: "you have reached the client api",

@@ -1,0 +1,5 @@
+### get categories
+GET http://localhost:8000/api/v1/category
+
+### get products
+GET http://localhost:8000/api/v1/products
